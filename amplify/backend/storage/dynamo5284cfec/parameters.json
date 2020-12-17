@@ -1,0 +1,5 @@
+{
+    "tableName": "community",
+    "partitionKeyName": "type",
+    "partitionKeyType": "S"
+}
