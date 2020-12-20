@@ -1,0 +1,145 @@
+.p1 {
+  /* font-size: 23px; */
+  font-size: 1.68vw;
+  color: #1c1a1d;
+  text-align: center;
+}
+
+.p2 {
+  /* font-size: 46px; */
+  font-size: 3.29vw;
+  color: #186aa5;
+  font-weight: bold;
+}
+
+.heading {
+  color: #186aa5;
+  /* font-size: 58px; */
+  font-size: 4vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+.li {
+  /* width: 88px;
+  height: 88px;
+  line-height: 88px; */
+  width: 6.44vw;
+  height: 6.44vw;
+  line-height: 6.44vw;
+  /* font-size: 36px; */
+  font-size: 2.63vw;
+  text-align: center;
+  border: 2px solid #1c1a1d;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  color: #186aa5;
+  position: relative;
+  z-index: 2;
+}
+.lib {
+  width: 6.44vw;
+  height: 6.44vw;
+  line-height: 6.44vw;
+  font-size: 2.63vw;
+  text-align: center;
+  border: 2px solid #1c1a1d;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  color: #186aa5;
+  position: relative;
+  z-index: 2;
+}
+.lib:first-child:before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  top: 3.22vw;
+  left: 6.22vw;
+  width: 58vw;
+  height: 1px;
+  background: #1c1a1d;
+  z-index: -1;
+  /* opacity: 80%; */
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .DesktopOnly {
+    display: none;
+  }
+  .mobileOnly {
+    display: block;
+  }
+  .heading {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .p2 {
+    font-size: 28px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .text {
+    font-size: 15px;
+    width: 178px;
+    color: #1c1a1d;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .circle1 {
+    position: relative;
+    border: 2px solid #1c1a1d;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    /* margin-top: 90px; */
+    background-color: #fff;
+    color: #186aa5;
+    z-index: 2;
+  }
+
+  .circle {
+    position: relative;
+    border: 2px solid #1c1a1d;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    /* margin-top: 90px; */
+    background-color: #fff;
+    color: #186aa5;
+    z-index: 2;
+  }
+  /* .circle:first-child {
+    margin-top: 0;
+  } */
+  .circle1::before {
+    position: absolute;
+    border: 1px solid #1c1a1d;
+    width: 0;
+    height: 200px;
+    display: block;
+    content: "";
+    left: 50%;
+    z-index: 1;
+    top: 48px;
+    margin-left: -1px;
+  }
+  /* .circle:first-child:before {
+    display: none;
+  } */
+}

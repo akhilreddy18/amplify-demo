@@ -1,0 +1,23 @@
+.bg {
+  background: url(../../../../assets/Images/Group\ 2.svg) no-repeat left;
+  background-size: contain;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.p {
+  font-size: 3.22vw;
+  font-weight: bold;
+  color: #186aa5;
+  text-align: center;
+}
+
+.institutions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
