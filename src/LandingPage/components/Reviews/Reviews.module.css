@@ -1,0 +1,135 @@
+.revBg {
+  background: url(../../../assets/Images/Path\ 875.svg) no-repeat right;
+  background-size: 50vw;
+  position: absolute;
+  left: 0;
+  top: -15vw;
+  right: 0;
+  bottom: -8vw;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.rowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.heading {
+  color: #186aa5;
+  /* font-size: 58px; */
+  font-size: 4.25vw;
+  font-weight: bold;
+}
+
+.p {
+  font-size: 1.75vw;
+  color: #707070;
+}
+
+.card {
+  /* width: 357px; */
+  width: 26.1vw;
+  /* height: 293px; */
+  height: 21.4vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0.36vw 0.95vw #00000033;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.75vw;
+}
+
+.img {
+  width: 3vw;
+  height: 4vw;
+}
+
+.evenSpace {
+  margin-top: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.displayCard {
+  display: block;
+}
+
+.p1 {
+  /* font-size: 16px; */
+  font-size: 1.3vw;
+  color: #362e2e;
+  text-align: center;
+  /* line-height: 40px; */
+  line-height: 2.7vw;
+  /* padding-top: 30px; */
+  padding-top: 2.2vw;
+}
+
+.p2 {
+  /* font-size: 24px; */
+  font-size: 1.757vw;
+  font-weight: bold;
+  color: #186aa5;
+  text-align: center;
+}
+
+/* MObile onlyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+
+*/
+@media (max-width: 600px) {
+  .heading {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  .p {
+    display: none;
+  }
+  .card {
+    width: 250px;
+    height: 220px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0.35vw 0.95vw #00000033;
+    mix-blend-mode: multiply;
+    /* opacity: 1; */
+  }
+
+  .p1 {
+    font-size: 14px;
+    text-align: center;
+    /* opacity: 80%; */
+    line-height: 40px;
+    margin: 20px 5px;
+    line-height: 30px;
+  }
+  .p2 {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .img {
+    width: 24px;
+    height: 24px;
+  }
+  .displayCard {
+    display: none;
+  }
+  .revBg {
+    display: none;
+  }
+}

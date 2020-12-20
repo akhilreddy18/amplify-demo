@@ -1,0 +1,25 @@
+.heading {
+  color: #186aa5;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.evenSpace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p1 {
+  font-size: 18px;
+  color: #186aa5;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 601px) {
+  .mobileOnly {
+    display: none;
+  }
+}
