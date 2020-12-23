@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import "../CustomModal/CustomModal.css";
+import React from "react";
+import { Hub } from "aws-amplify";
+
+import classes from "./CustomModal.module.css";
 import Backdrop from "../Backdrop/Backdrop";
 import Logo from "../../../assets/Images/Group 2136.png";
-import { Modal, Col, Row } from "react-bootstrap";
-import Logo1 from "../../../assets/Images/Group 2164.png";
-import Mail from "../../../assets/Images/Icon Mail.png";
-import Facebook from "../../../assets/Images/facebook-icon.png";
-import Google from "../../../assets/Images/google-icon.png";
-import { ButtonGroup, ToggleButton } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import LogInForm from "../Auth/LogInForm";
+import SignUPForm from "../Auth/SignUpForm";
 
 const CustomModal = (props) => {
-  const [radioValue, setRadioValue] = useState(1);
-  const radios = [
-    { name: "Student", value: "1" },
-    { name: "Parent", value: "0" },
-  ];
-
+  Hub.listen("auth", (data) => {
+    const { payload } = data;
+    this.onAuthEvent(payload);
+    console.log(
+      "A new auth event has happened: ",
+      data.payload.data.username + " has " + data.payload.event
+    );
+  });
+  
   return (
     <div>
       <Backdrop show={props.show} clicked={props.modalClosed} />
       <div
-        className="Modal"
+        className={classes.Modal}
         style={{
           transform: props.show ? "translateY(0)" : "translateY(-100vh)",
           opacity: props.show ? "1" : "0",
@@ -35,14 +35,16 @@ const CustomModal = (props) => {
             textAlign: "center",
             fontSize: "2.2vw",
             fontWeight: "bold",
-            padding: "10px 0",
+            padding: "5px 0",
           }}
         >
           <p style={{ display: "inline-block", marginBottom: "0" }}>
-            {props.auth ? "Log In" : "Sign Up"}
+            {props.auth ? "Log in" : "Sign Up"}
           </p>
           <button
-            onClick={props.modalClosed}
+            onClick={() => {
+              props.modalClosed();
+            }}
             style={{
               border: "none",
               backgroundColor: "#186aa5",
@@ -58,7 +60,7 @@ const CustomModal = (props) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             padding: "20px 0",
           }}
         >
@@ -74,41 +76,9 @@ const CustomModal = (props) => {
             </p>
           </div>
           <div style={style.border}>
-            <div className="btnGroup">
-              <button>Student</button>
-              <button>Parent</button>
-            </div>
-            <div
-              // onClick={handleGoogleSignIn}
-              className="googlebtn"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                margin: "0.5vw 0",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                }}
-              >
-                <img
-                  style={{
-                    width: "2.5vw",
-                    height: "2.5vw",
-                    float: "left",
-                  }}
-                  src={Google}
-                  alt="Google"
-                />
-                <p className="btnText">
-                  {props.auth ? "Log in with Google" : "Sign Up with Google"}
-                </p>
-              </div>
-            </div>
+            {props.auth?
+            <LogInForm />
+            :<SignUPForm first="true" />}
           </div>
         </div>
       </div>
@@ -119,7 +89,7 @@ const CustomModal = (props) => {
 const style = {
   join: {
     maxWidth: "20vw",
-    fontSize: "1.7vw",
+    fontSize: "1.6vw",
     textAlign: "center",
     lineHeight: "2.2vw",
     color: "#0f0e0e",
@@ -140,6 +110,9 @@ const style = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-around",
+    maxHeight: "75vh",
+    marginBottom: "10px",
+    marginTop: "10px"
   },
   label: {
     display: "block",

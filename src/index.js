@@ -8,9 +8,9 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import LandingPage from "./LandingPage/LandingPage";
 import AboutUs from "./LandingPage/components/Navbar/NavigationItems/AboutUs";
 
-// import Amplify from "aws-amplify";
-// import config from './aws-exports';
-// Amplify.configure(config);
+import Amplify from "aws-amplify";
+import config from './aws-exports';
+Amplify.configure(config);
 
 const hist = createBrowserHistory();
 
