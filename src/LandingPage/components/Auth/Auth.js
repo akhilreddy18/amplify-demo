@@ -64,7 +64,7 @@ export default {
         try {
             console.log("clicked");
             const amplifyUser = await Auth.federatedSignIn({ provider: "Facebook" });
-            console.log("######");
+            //console.log("######");
             console.log(amplifyUser);
         } catch (error) {
             console.log(error);
